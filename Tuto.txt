@@ -1,0 +1,66 @@
+Auteur : Walter White
+
+Description : C'est un script d'achat et d'utilisation de kit de réparation de véhicules / kit de soins / cigarettes / joint adapté au menu LaLife
+Un script assez simple, mais je le publie si ça intéresse quelqu'un.
+L'achat des articles se fait dans les supérettes.
+
+
+
+
+
+
+
+----ETAPE 1----
+AJOUTER LES ARTICLES A VOTRE BASE DE DONNEE(MySQL):
+
+    id= 39 name= Cigarettes value= 0 type= 0 
+    id= 40 name= Kit de réparation value= 0 type= 0 
+    id= 41 name= Kit de soins value= 0 type= 0 
+    id= 42 name= Pétard de weed value= 0 type= 0
+
+
+
+----ETAPE 2----
+PLACER LE FICHIER ADVANCEDSHOP_client.lua DANS LE DOSSIER fivemenu
+
+AJOUTER LA LIGNE 
+client_script 'repairkit_client.lua' 
+DANS LE FICHIER __resource.lua
+
+
+----ETAPE 3----
+MODIFIER LE FICHIER inventory.lua: (OU UTILISER LE ITEMS.SQL FOURNIS)
+DANS inv_array_legal AJOUTEZ LA LIGNE SUIVANTE:
+
+
+    {name="Cigarettes", id=39, price=100, value=0}, 
+    {name="Kit de réparation", id=40, price=10000, value=0}, 
+    {name="Kit de soins", id=41, price=10000, value=0},
+    {name="Pétard de weed", id=42, price=200, value=0},
+
+
+
+----ETAPE 4----
+MODIFIER LE FICHIER inventory_client.lua
+REMPLACER LE //  AddEventHandler("inventory:useItem", function(target, id) LIGNE 88 JUSQU'AU END) PAR : 
+
+
+Lien :  https://pastebin.com/wu16jbE2
+
+
+
+----ETAPE 5----
+PLACER LE FICHIER repair.ogg DANS LE DOSSIER client_base\lock\client\html\sounds
+
+
+AJOUTER LA LIGNE 
+file 'lock/client/html/sounds/repair.ogg' 
+DANS LE FICHIER client_base\ __resource.lua
+
+
+
+
+
+
+Merci a HighBlacK de FiveM France pour le kit de reparation et le fichier son de reparation et le tuto ecrit !!! 
+Merci a Marceau pour l'execution du retrait de santer lors de la consommation de produit toxique .
