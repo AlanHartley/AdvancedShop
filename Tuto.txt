@@ -1,8 +1,8 @@
 Auteur : Walter White
 
-Description : C'est un script d'achat et d'utilisation de kit de réparation de véhicules / kit de soins / cigarettes / joint adapté au menu LaLife
-Un script assez simple, mais je le publie si ça intéresse quelqu'un.
-L'achat des articles se fait dans les supérettes.
+Description : C'est un script d'achat et d'utilisation de kit de rÃ©paration de vÃ©hicules / kit de soins / cigarettes / joint adaptÃ© au menu LaLife
+Un script assez simple, mais je le publie si Ã§a intÃ©resse quelqu'un.
+L'achat des articles se fait dans les supÃ©rettes.
 
 
 
@@ -14,9 +14,9 @@ L'achat des articles se fait dans les supérettes.
 AJOUTER LES ARTICLES A VOTRE BASE DE DONNEE(MySQL):
 
     id= 39 name= Cigarettes value= 0 type= 0 
-    id= 40 name= Kit de réparation value= 0 type= 0 
+    id= 40 name= Kit de rÃ©paration value= 0 type= 0 
     id= 41 name= Kit de soins value= 0 type= 0 
-    id= 42 name= Pétard de weed value= 0 type= 0
+    id= 42 name= PÃ©tard de weed value= 0 type= 0
 
 
 
@@ -34,9 +34,9 @@ DANS inv_array_legal AJOUTEZ LA LIGNE SUIVANTE:
 
 
     {name="Cigarettes", id=39, price=100, value=0}, 
-    {name="Kit de réparation", id=40, price=10000, value=0}, 
+    {name="Kit de rÃ©paration", id=40, price=10000, value=0}, 
     {name="Kit de soins", id=41, price=10000, value=0},
-    {name="Pétard de weed", id=42, price=200, value=0},
+    {name="PÃ©tard de weed", id=42, price=200, value=0},
 
 
 
@@ -64,3 +64,4 @@ DANS LE FICHIER client_base\ __resource.lua
 
 Merci a HighBlacK de FiveM France pour le kit de reparation et le fichier son de reparation et le tuto ecrit !!! 
 Merci a Marceau pour l'execution du retrait de santer lors de la consommation de produit toxique .
+Merci a Aldenfus pour le patch et l'optimisation du system d'animation du kit de rÃ©paration .
