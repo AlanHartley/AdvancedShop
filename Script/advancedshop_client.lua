@@ -83,18 +83,22 @@ RegisterNetEvent("repair:repairkit")
 AddEventHandler("repair:repairkit", function()
 local pos = GetEntityCoords( GetPlayerPed(-1), 1 )
 local car = GetClosestVehicle( pos.x, pos.y, pos.z, 3.000, 0, 70)
-	
-	if DoesEntityExist(car) then
-	   PlayScenario2("world_human_vehicle_mechanic")                       
-	   TriggerEvent('InteractSound_CL:PlayOnOne', 'repair', 1.0)       
-	   Wait(20000)                                                        
-	   SetVehicleFixed(car)                                             
-	   SetVehicleEngineHealth(car, 1000.0)                              
+    
+    if DoesEntityExist(car) then
+        local myPed = GetPlayerPed(-1)
+        local scenario = 'WORLD_HUMAN_VEHICLE_MECHANIC'
+        local h = GetEntityHeading(myPed)
+        TaskStartScenarioAtPosition(myPed, scenario, pos.x, pos.y, pos.z, h-180, 0, 0, 1)                       
+       TriggerEvent('InteractSound_CL:PlayOnOne', 'repair', 1.0)       
+       Wait(20000)   
+        ClearPedTasks(myPed)       
+       SetVehicleFixed(car)                                             
+       SetVehicleEngineHealth(car, 1000.0)                              
        SetVehicleBodyHealth( car, 1000.0)                              
        SetVehicleEngineOn( car, true, false, true)
        DrawNotif("Le véhicule est ~g~réparé")                           
     else
-	   DrawNotif("~r~Aucun véhicule à proximité")                      
+       DrawNotif("~r~Aucun véhicule à proximité")                      
        TriggerEvent("player:receiveItem", 40, 1)         
     end
 end)
