@@ -128,7 +128,7 @@ local car = GetClosestVehicle( pos.x, pos.y, pos.z, 3.000, 0, 70)
        DrawNotif("Le véhicule est ~g~ouvert")                           
     else
 	   DrawNotif("~r~Aucun véhicule à proximité")                      
-       TriggerEvent("player:receiveItem", 42, 1)         
+       TriggerEvent("player:receiveItem", 43, 1)         
     end
 end)
 
