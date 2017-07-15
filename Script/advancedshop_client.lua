@@ -37,6 +37,14 @@ function PlayScenario3(param1)
 	end)
 end
 
+function PlayScenario4(param1) 
+	Citizen.CreateThread(function()
+		TaskStartScenarioInPlace(GetPlayerPed(-1), param1, 0, 1)
+		Citizen.Wait(20000)
+		ClearPedTasksImmediately(GetPlayerPed(-1))
+	end)
+end
+
 function Toxicated()
           TaskStartScenarioInPlace(GetPlayerPed(-1), "WORLD_HUMAN_DRUG_DEALER", 0, 1)
           Citizen.Wait(2000)
@@ -104,6 +112,27 @@ local car = GetClosestVehicle( pos.x, pos.y, pos.z, 3.000, 0, 70)
 end)
 
 -----FIN KIT DE REPARATION-----
+
+-----DEBUT CROCHETER VEHICULE-----
+
+RegisterNetEvent("crocheter:vehicule")
+AddEventHandler("crocheter:vehicule", function()
+local pos = GetEntityCoords( GetPlayerPed(-1), 1 )
+local car = GetClosestVehicle( pos.x, pos.y, pos.z, 3.000, 0, 70)
+	
+	if DoesEntityExist(car) then
+	   PlayScenario4("WORLD_HUMAN_WELDING")                       
+	   TriggerEvent('InteractSound_CL:PlayOnOne', 'unlock', 1.0)       
+	   Wait(20000)                                                        
+	   SetVehicleDoorsLocked(car, 1)
+       DrawNotif("Le véhicule est ~g~ouvert")                           
+    else
+	   DrawNotif("~r~Aucun véhicule à proximité")                      
+       TriggerEvent("player:receiveItem", 42, 1)         
+    end
+end)
+
+-----FIN CROCHETER VEHICULE-----
 
 -----DEBUT KIT DE SOINS-----
 
