@@ -24,7 +24,7 @@ AJOUTER LES ARTICLES A VOTRE BASE DE DONNEE(MySQL):
 PLACER LE FICHIER ADVANCEDSHOP_client.lua DANS LE DOSSIER fivemenu
 
 AJOUTER LA LIGNE 
-client_script 'repairkit_client.lua' 
+client_script 'advanced_shop.lua' 
 DANS LE FICHIER __resource.lua
 
 
@@ -37,6 +37,7 @@ DANS inv_array_legal AJOUTEZ LA LIGNE SUIVANTE:
     {name="Kit de réparation", id=40, price=10000, value=0}, 
     {name="Kit de soins", id=41, price=10000, value=0},
     {name="Pétard de weed", id=42, price=200, value=0},
+    {name="Kit crochetage véhicule", id=43, price=10000, value=0},
 
 
 
@@ -45,7 +46,7 @@ MODIFIER LE FICHIER inventory_client.lua
 REMPLACER LE //  AddEventHandler("inventory:useItem", function(target, id) LIGNE 88 JUSQU'AU END) PAR : 
 
 
-Lien :  https://pastebin.com/wu16jbE2
+Lien :  https://pastebin.com/7PbNjaNP
 
 
 
